@@ -6,6 +6,7 @@ use Slim\Factory\AppFactory;
 use Slim\Factory\ServerRequestCreatorFactory;
 
 require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../redbean/rb.php';
 
 // Instantiate PHP-DI ContainerBuilder
 $containerBuilder = new ContainerBuilder();
@@ -24,6 +25,14 @@ $dependencies($containerBuilder);
 
 // Build PHP-DI Container instance
 $container = $containerBuilder->build();
+
+// Setup database connection
+$settings = $container->get('settings');
+R::setup(
+    'mysql:host=' . $settings['host'] . ';dbname=' . $settings['dbname'],
+    $settings['user'],
+    $settings['password']
+);
 
 // Instantiate the app
 AppFactory::setContainer($container);

@@ -3,6 +3,7 @@ version: '3.7'
 volumes:
     logs:
         driver: local
+    data:
 
 services:
     slim:
@@ -13,3 +14,22 @@ services:
         volumes:
             - .:/var/www
             - logs:/var/www/logs
+        links:
+            - db
+    db:
+        image: mysql
+        ports:
+            - "3306:3306"
+        volumes:
+            - data:/var/lib/mysql
+        environment:
+            - MYSQL_ROOT_PASSWORD=password
+            - MYSQL_DATABASE=app_development
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin:latest
+        links:
+            - db
+        ports:
+            - 80:80
+        environment:
+            - PMA_ARBITRARY=1
