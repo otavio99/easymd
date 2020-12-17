@@ -9,13 +9,18 @@ use Psr\Http\Message\ServerRequestInterface;
 
 class ShowLoginPageAction extends BaseAction
 {
-   public function __invoke(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
+   public function __invoke(
+      ServerRequestInterface $request, 
+      ResponseInterface $response, 
+      array $args
+   ): ResponseInterface
    {
-        $page = $this->mustache->render(
-			"acesso_publico/login.mustache"
-		);
-	    $response->getBody()->write($page);
-        $this->logger->error('ShowLoginPageAction executed!');
-	    return $response;
+      $page = $this->mustache->render(
+        "acesso_publico/login.mustache",
+        array('mensagem'=>'Vamos acordar cedooooooooOO!!!!!!!!!!!!!!!!!!')
+      );
+      $response->getBody()->write($page);
+      $this->logger->error('ShowLoginPageAction executed!');
+      return $response;
    }
 }

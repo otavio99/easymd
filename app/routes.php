@@ -9,10 +9,7 @@ use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 use App\Login\Application\Actions\ShowLoginPageAction as ShowLoginPageAction;
 
 return function (App $app) {
-    $app->options('/{routes:.*}', function (Request $request, Response $response) {
-        // CORS Pre-Flight OPTIONS Request Handler
-        return $response;
-    });
 
     $app->get('/', ShowLoginPageAction::class);
+    
 };

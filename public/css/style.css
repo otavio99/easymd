@@ -1,0 +1,28 @@
+body{
+	background-color: #2B2C3C;
+}
+
+.hr-top{
+	background-color: white;
+	width:90%;
+	margin-top: 60px;
+}
+
+.hr-bot{
+	background-color: white;
+	width:90%;
+	margin-bottom: 40px;
+}
+
+nav{
+	padding-left: 5% !important;
+	padding-right: 5% !important;
+}
+
+.nav-link, .navbar-brand{
+	color: white !important;
+}
+
+.navbar-toggler{
+	background-color: white !important;
+}
