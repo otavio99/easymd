@@ -1,6 +1,12 @@
 #Easymd
 
-## How to run
+Before running the project, verify the permisions of the files (if they can be edited by your user). In linux you can use the command `sudo chmod 777 -R *.` when in the root of the project. 
+
+## How to run without Docker
+
+In order to run without docker, you need to have PHP Cli on your command line. After, run `php -S localhost:8080`.
+
+## How to run using Docker
 
 To run the application in development, you can run these commands 
 
