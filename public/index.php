@@ -28,6 +28,8 @@ $container = $containerBuilder->build();
 
 // Setup database connection
 $settings = $container->get('settings');
+$settings = $settings["db"];
+
 R::setup(
     'mysql:host=' . $settings['host'] . ';dbname=' . $settings['dbname'],
     $settings['user'],
