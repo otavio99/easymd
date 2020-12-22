@@ -6,10 +6,10 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\App;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 
-use App\Login\Application\Actions\ShowLoginPageAction as ShowLoginPageAction;
+use App\Login\Application\Actions\ShowIndexPageAction as ShowIndexPageAction;
 
 return function (App $app) {
 
-    $app->get('/', ShowLoginPageAction::class);
+    $app->get('/', ShowIndexPageAction::class);
     
 };

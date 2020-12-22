@@ -7,7 +7,7 @@ use Psr\Container\ContainerInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
-class ShowLoginPageAction extends BaseAction
+class ShowIndexPageAction extends BaseAction
 {
    public function __invoke(
       ServerRequestInterface $request, 
@@ -16,8 +16,7 @@ class ShowLoginPageAction extends BaseAction
    ): ResponseInterface
    {
       $page = $this->mustache->render(
-        "acesso_publico/login.mustache",
-        array('mensagem'=>'Vamos acordar cedooooooooOO!!!!!!!!!!!!!!!!!!')
+        "acesso_publico/index.mustache"
       );
       $response->getBody()->write($page);
       $this->logger->error('ShowLoginPageAction executed!');
