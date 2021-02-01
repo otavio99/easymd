@@ -17,3 +17,12 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+var w = window.innerWidth;
+console.log(h);
+if ( w <= 500 ) {
+    document.getElementById("email_icon").href = "mailto:contato@easymd.com.br"
+}
+else {
+    document.getElementById("email_icon").href = "https://mail.google.com/a/?view=cm&fs=1&to=contato@easymd.com.br"
+}
