@@ -40,8 +40,12 @@ return function (ContainerBuilder $containerBuilder) {
                 'partials_loader' => new Mustache_Loader_FilesystemLoader(__DIR__.'/../templates'),
                 'helpers' => array(
                     "path_to_statics" => $path_to_statics,
-                    "css_ver" => hash_file("md5", __DIR__."/../public/css/style.css"),
-                    "js_ver" => hash_file("md5", __DIR__."/../public/js/scripts.js"),
+                    "load_style_css" => function(){
+                        return  htmlspecialchars(file_get_contents(__DIR__."/../public/css/style.css"), ENT_COMPAT, 'UTF-8');
+                    },
+                    "load_script_js" => function(){
+                        return  htmlspecialchars(file_get_contents(__DIR__."/../public/js/scripts.js"), ENT_COMPAT, 'UTF-8');
+                    }
                 ),
                 'escape' => function($value) {
                     return htmlspecialchars($value, ENT_COMPAT, 'UTF-8');
