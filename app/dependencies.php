@@ -39,7 +39,9 @@ return function (ContainerBuilder $containerBuilder) {
                 'loader' => new Mustache_Loader_FilesystemLoader(__DIR__.'/../templates'),
                 'partials_loader' => new Mustache_Loader_FilesystemLoader(__DIR__.'/../templates'),
                 'helpers' => array(
-                    "path_to_statics" => $path_to_statics
+                    "path_to_statics" => $path_to_statics,
+                    "css_ver" => hash_file("md5", __DIR__."/../public/css/style.css"),
+                    "js_ver" => hash_file("md5", __DIR__."/../public/js/scripts.js"),
                 ),
                 'escape' => function($value) {
                     return htmlspecialchars($value, ENT_COMPAT, 'UTF-8');
