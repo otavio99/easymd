@@ -19,7 +19,7 @@ function topFunction() {
 }
 
 var w = window.innerWidth;
-console.log(h);
+console.log(w);
 if ( w <= 500 ) {
     document.getElementById("email_icon").href = "mailto:contato@easymd.com.br"
 }
