@@ -10,7 +10,11 @@ require __DIR__ . '/../vendor/autoload.php';
 // Instantiate PHP-DI ContainerBuilder
 $containerBuilder = new ContainerBuilder();
 
-if (false) { // Should be set to true in production
+//load env vars
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__. "/../");
+$dotenv->load();
+
+if ($_ENV["PRODUCTION"] != 'false') { // Should be set to true in production
 	$containerBuilder->enableCompilation(__DIR__ . '/../var/cache');
 }
 

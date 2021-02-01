@@ -26,6 +26,11 @@ return function (ContainerBuilder $containerBuilder) {
             return $logger;
         },
         Mustache_Engine::class => function (ContainerInterface $c) {
+            $path_to_statics= "/";
+
+            if ($_ENV["PRODUCTION"] != 'false'){
+                $path_to_statics= "/easymd/public/";
+            }
             $mustache = new Mustache_Engine(array(
                 'template_class_prefix' => '__MyTemplates_',
                 'cache' => __DIR__.'/../tmp/cache/mustache',
@@ -33,9 +38,9 @@ return function (ContainerBuilder $containerBuilder) {
                 'cache_lambda_templates' => true,
                 'loader' => new Mustache_Loader_FilesystemLoader(__DIR__.'/../templates'),
                 'partials_loader' => new Mustache_Loader_FilesystemLoader(__DIR__.'/../templates'),
-                'helpers' => array('i18n' => function($text) {
-                    // do something translatey here...
-                }),
+                'helpers' => array(
+                    "path_to_statics" => $path_to_statics
+                ),
                 'escape' => function($value) {
                     return htmlspecialchars($value, ENT_COMPAT, 'UTF-8');
                 },
