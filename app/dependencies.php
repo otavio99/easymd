@@ -44,11 +44,11 @@ return function (ContainerBuilder $containerBuilder) {
                         return  htmlspecialchars(file_get_contents(__DIR__."/../public/css/style.css"), ENT_COMPAT, 'UTF-8');
                     },
                     "load_script_js" => function(){
-                        return  htmlspecialchars(file_get_contents(__DIR__."/../public/js/scripts.js"), ENT_COMPAT, 'UTF-8');
+                        return  file_get_contents(__DIR__."/../public/js/scripts.js");
                     }
                 ),
                 'escape' => function($value) {
-                    return htmlspecialchars($value, ENT_COMPAT, 'UTF-8');
+                    return $value;
                 },
                 'charset' => 'ISO-8859-1',
                 //'logger' => new Mustache_Logger_StreamLogger('php://stderr'),
