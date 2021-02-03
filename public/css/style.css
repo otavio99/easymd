@@ -145,6 +145,20 @@ section, header {
   overflow: auto;
 }
 
+#translate {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: grey;
+    color: white;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 14px;
+}
+
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
 

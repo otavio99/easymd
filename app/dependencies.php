@@ -45,6 +45,9 @@ return function (ContainerBuilder $containerBuilder) {
                     },
                     "load_script_js" => function(){
                         return  file_get_contents(__DIR__."/../public/js/scripts.js");
+                    },
+                    "load_translate_js" => function(){
+                        return  file_get_contents(__DIR__."/../public/js/translate.js");
                     }
                 ),
                 'escape' => function($value) {
