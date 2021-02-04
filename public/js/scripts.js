@@ -83,7 +83,7 @@ var dict = {
 }
 
 var change = true;
-function translate(){
+function trl(){
     if(change){
         var translator = $('body').translate({lang: "en", t: dict});
         document.getElementById("translate").innerHTML = "Mude para português";
