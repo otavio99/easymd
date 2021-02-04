@@ -50,9 +50,9 @@ var dict = {
          pt: "Somos uma empresa que presta serviços de consultoria e desenvolvimento de software. Sobre nossos serviços, podemos destacar:",
          en: "We are a company that provides consulting services and software development. About our services, we can highlight:"
     },
-    "D&M de Paginas Web": {
-         pt: "D&M de Paginas Web",
-         en: "D&M of Web Pages:"
+    "de Paginas Web": {
+         pt: "de Paginas Web",
+         en: "of Web Pages:"
     },
     "Se trata do Desenvolvimento e Manutenção de páginas web, onde o foco é criar e manter páginas que poderão impulsionar seu empreendimento. Preços a partir de R$37,00.": {
          pt: "Se trata do Desenvolvimento e Manutenção de páginas web, onde o foco é criar e manter páginas que poderão impulsionar seu empreendimento. Preços a partir de R$37,00.",
