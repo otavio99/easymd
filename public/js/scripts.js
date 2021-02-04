@@ -5,8 +5,14 @@ var mybutton = document.getElementById("myBtn");
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
+
+  if (
+      (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20)
+      &&
+      !($(window).scrollTop() + $(window).height() > $(document).height() - 100)
+  ) {
+     mybutton.style.display = "block";
+
   } else {
     mybutton.style.display = "none";
   }
