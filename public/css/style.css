@@ -18,7 +18,7 @@ header{
 }
 
 
-header a:link, header a:visited {
+header a.grey:link, header a.grey:visited {
   background-color: grey;
   color: white;
   padding: 15px 25px;
@@ -28,17 +28,53 @@ header a:link, header a:visited {
   margin: 20px;
 }
 
-header a:hover, header a:active {
+header a.grey:hover, header a.grey:active {
   background-color: white;
   color: #2A2D34;
 }
 
+.nav {
+    position: absolute;
+}
+
+.list-nav {
+    top: 0;
+    right: 0;
+    font-size: 17px;
+}
+
+.item-nav{
+    color: white;
+    cursor: pointer;
+    padding: 20px 35px 0px 0px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+header a.item-nav:hover, header a.item-nav:active {
+  text-decoration: none;
+  color: white;
+}
+
+#translate {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: grey;
+    color: white;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 14px;
+}
 
 .text-about{
 	max-width: 600px;
 	margin: auto;
 }
-
 .copyright{
  background-color: #2A2D34;
  color: white; 
@@ -53,7 +89,7 @@ header a:hover, header a:active {
 }
 
 .center-vertically {
-  padding-top: 17%;
+  padding-top: 130px;
 }
 
 .padt8{
@@ -143,20 +179,6 @@ form.example::after {
 section, header {
   height: 100%;
   overflow: auto;
-}
-
-#translate {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background-color: grey;
-    color: white;
-    padding: 5px 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    cursor: pointer;
-    font-size: 14px;
 }
 
 @media only screen and (max-width: 768px) {

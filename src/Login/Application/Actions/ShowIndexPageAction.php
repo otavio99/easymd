@@ -16,7 +16,7 @@ class ShowIndexPageAction extends BaseAction
    ): ResponseInterface
    {
       $page = $this->mustache->render(
-        "acesso_publico/index.mustache"
+        "landing_page/index.mustache"
       );
       $response->getBody()->write($page);
       $this->logger->error('ShowLoginPageAction executed!');
